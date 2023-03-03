@@ -1,7 +1,21 @@
 <script>
+export default {
 
+}
 </script>
 
-<template></template>
+<template>
+    <header class="d-flex align-items-center justify-content-end">
+        <nav>
+            <input type="search" name="" id="">
+            <button type="button" class="ms-2 me-3">Search</button>
+        </nav>
+    </header>
+</template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+    height: 100px;
+    background-color: #000;
+}
+</style>
