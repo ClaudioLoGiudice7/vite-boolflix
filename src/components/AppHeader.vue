@@ -1,11 +1,8 @@
 <script>
+
+import axios from "axios"
+
 export default {
-    data() {
-        return {
-
-        }
-    },
-
     methods: {
         getResult() {
             axios.get("https://api.themoviedb.org/3/search/movie?api_key=c62e8b24ab2d74189b7297f58711d77f")

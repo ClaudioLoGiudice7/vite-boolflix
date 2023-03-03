@@ -5,7 +5,6 @@ import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import CardsList from "./components/CardsList.vue";
 import Card from "./components/Card.vue";
-import axios from "axios"
 
 // DEFINIZIONE DEL COMPONENTE IN PAGINA
 export default {
