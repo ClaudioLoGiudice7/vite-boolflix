@@ -3,14 +3,19 @@
 // IMPORT DEL COMPONENTE
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
-import CardsList from "./components/CardsList.vue";
-import Card from "./components/Card.vue";
+import AppCard from "./components/AppCard.vue";
+import { store } from "./store";
 
 // DEFINIZIONE DEL COMPONENTE IN PAGINA
 export default {
+  data() {
+    return {
+      store
+    }
+  },
 
   components: {
-    AppHeader, AppMain, CardsList, Card
+    AppHeader, AppMain, AppCard
   },
 
 };
@@ -19,8 +24,7 @@ export default {
 <template>
   <AppHeader></AppHeader>
   <AppMain></AppMain>
-  <CardsList></CardsList>
-  <Card></Card>
+  <AppCard></AppCard>
 </template>
 
 
