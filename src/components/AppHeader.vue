@@ -9,14 +9,22 @@ export default {
             searchText: "",
         }
     },
+
+    emits: ["performSearch"],
 }
 </script>
 
 <template>
     <header class="d-flex align-items-center justify-content-end">
-        <nav>
-            <input type="search" name="" id="" placeholder="Search" v-model="searchText" @keyup.enter="searchMovies">
-            <button type="button" class="ms-2 me-3" @click="searchMovies">Search</button>
+
+        <nav class="navbar">
+            <div class="container-fluid">
+                <form class="d-flex" role="search" @submit.prevent="$emit('performSearch', searchText)">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        v-model="searchText" @keyup.enter="searchMovies">
+                    <button class="btn btn-outline-success" type="submit" @click="searchMovies">Search</button>
+                </form>
+            </div>
         </nav>
 
         <div v-for="movie in store.movieList" :key="movie.id" :data="movie">

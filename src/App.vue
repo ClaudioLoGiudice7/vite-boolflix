@@ -37,8 +37,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain :films="store.movieList" />
+  <AppHeader @performSearch="" />
+  <AppMain :films="store.movieList"></AppMain>
 </template>
 
 
