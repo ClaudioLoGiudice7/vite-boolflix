@@ -38,7 +38,10 @@ export default {
 
 <template>
   <AppHeader @performSearch="searchMovies" />
-  <AppMain :films="store.movieList" />
+
+  <div class="container my-5">
+    <AppMain :films="store.movieList" />
+  </div>
 </template>
 
 
