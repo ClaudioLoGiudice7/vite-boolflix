@@ -21,7 +21,7 @@ export default {
   },
 
   methods: {
-    searchMovies() {
+    searchMovies(performSearch) {
       axios
         .get(
           `${store.BaseURI}/search/movie?&api_key=${store.apiKey}&query=${this.searchText}`
@@ -37,8 +37,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader @performSearch="" />
-  <AppMain :films="store.movieList"></AppMain>
+  <AppHeader @performSearch="searchMovies" />
+  <AppMain :films="store.movieList" />
 </template>
 
 
