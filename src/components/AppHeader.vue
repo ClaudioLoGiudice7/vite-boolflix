@@ -1,6 +1,6 @@
 <script>
 
-import { store } from "../store";
+import { store } from "../data/store";
 
 export default {
     data() {
@@ -27,11 +27,6 @@ export default {
             </div>
         </nav>
 
-        <div v-for="movie in store.movieList" :key="movie.id" :data="movie">
-            <p class="text-white">
-                {{ movie.title }}
-            </p>
-        </div>
     </header>
 </template>
 
