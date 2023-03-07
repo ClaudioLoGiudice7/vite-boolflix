@@ -3,28 +3,42 @@
 // IMPORT DEL COMPONENTE
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
-import AppCard from "./components/AppCard.vue";
-import { store } from "./store";
+import { store } from "./store"
+
+import axios from "axios"
 
 // DEFINIZIONE DEL COMPONENTE IN PAGINA
 export default {
+
   data() {
     return {
       store
-    }
+    };
   },
 
   components: {
-    AppHeader, AppMain, AppCard
+    AppHeader, AppMain
   },
 
+  methods: {
+    searchMovies() {
+      axios
+        .get(
+          `${store.BaseURI}/search/movie?&api_key=${store.apiKey}&query=${this.searchText}`
+        )
+        .then((response) => {
+          store.movieList = response.data.results;
+          console.log(store.movieList);
+        })
+    }
+  }
 };
+
 </script>
 
 <template>
-  <AppHeader></AppHeader>
-  <AppMain></AppMain>
-  <AppCard></AppCard>
+  <AppHeader />
+  <AppMain :films="store.movieList" />
 </template>
 
 
