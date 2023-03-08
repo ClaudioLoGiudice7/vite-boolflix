@@ -13,7 +13,7 @@ export default {
             if (country == "EN") return "https://flagsapi.com/GB/flat/64.png"
             return "https://flagsapi.com/" + country + "/flat/64.png"
         }
-    }
+    },
 }
 </script>
 
